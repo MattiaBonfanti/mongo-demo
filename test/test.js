@@ -60,16 +60,32 @@ describe('basic crud tests', function() {
     });
   });
 
-  it.skip('should update a document', function(done) {
+  it('should update a document', function(done) {
 
+    var query = {
+      _id: _id
+    };
 
-    done(assert(false));
+    var update = {
+      paramX: 500,
+      paramY: 1000
+    };
+
+    db.updateData(query, update, function(err, result) {
+      if (err) return done(err);
+
+      console.log(result);
+      assert.equal(result, 1, "expected to update one document");
+
+      done();
+    });
   });
 
   it('should delete a document', function(done) {
     db.deleteData({_id: _id}, function(err, result) {
       if (err) return done(err);
       console.log(result);
+      assert.equal(result, 1, "expected to update one document");
       done();
     });
   });
