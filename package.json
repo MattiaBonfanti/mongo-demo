@@ -2,7 +2,7 @@
   "name": "mongo-demo",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "lib",
   "scripts": {
     "test": "mocha"
   },
@@ -10,5 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "mongodb": "^1.4.19"
+  },
+  "devDependencies": {
+    "mocha": "^1.21.5"
   }
 }
